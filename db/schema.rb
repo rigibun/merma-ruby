@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_114109) do
+ActiveRecord::Schema.define(version: 2019_09_23_125153) do
+
+  create_table "items", force: :cascade do |t|
+    t.integer "exhibitor_id", null: false
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "condition", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exhibitor_id"], name: "index_items_on_exhibitor_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +34,5 @@ ActiveRecord::Schema.define(version: 2019_09_23_114109) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "users", column: "exhibitor_id"
 end
