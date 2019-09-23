@@ -9,5 +9,8 @@
     <h1>
         Merma Ruby
     </h1>
+    <% if !current_user %>
+        <h2><a href="/sign_up">Sign Up Now</a></h2>
+    <% end %>
 </body>
 </html>
