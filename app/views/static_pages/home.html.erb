@@ -10,7 +10,10 @@
         Merma Ruby
     </h1>
     <% if !current_user %>
-        <h2><a href="/signup">Sign Up Now</a></h2>
+        <h2><%= link_to 'Sign Up Now', new_user_registration_path %></a></h2>
+        <%= link_to 'or Sign In', new_user_session_path %>
+    <% else %>
+        <%= link_to "Log Out", destroy_user_session_path,  method: :delete %>
     <% end %>
 </body>
 </html>
