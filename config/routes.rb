@@ -11,4 +11,6 @@ Rails.application.routes.draw do
                        sessions: "users/sessions",
                      }
   root to: "static_pages#home"
+
+  resources :items
 end
