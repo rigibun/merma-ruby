@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = current_user.exhibits.build
   end
 
   def show
@@ -17,11 +18,23 @@ class ItemsController < ApplicationController
   end
 
   def create
+    @item = current_user.exhibits.build(item_params)
+    if @item.save
+      redirect_to @item
+    else
+      render 'new'
+    end
   end
 
   def update
   end
 
   def delete
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :description, :condition)
   end
 end
