@@ -1,0 +1,9 @@
+ja:
+  enums:
+    item:
+      condition:
+        brand_new: '新品・未使用'
+        look_brand_new: '新品同様'
+        good: '目立った傷・汚れなし'
+        fair: '傷・汚れあり'
+        poor: '損傷が激しい'
