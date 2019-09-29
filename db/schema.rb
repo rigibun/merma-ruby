@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2019_09_23_125153) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "items", force: :cascade do |t|
-    t.integer "exhibitor_id", null: false
+    t.bigint "exhibitor_id", null: false
     t.string "name", null: false
     t.text "description", null: false
     t.integer "condition", null: false

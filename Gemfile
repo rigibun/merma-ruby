@@ -15,6 +15,8 @@ gem 'devise', '~> 4.7.1'
 
 gem 'enum_help', '~> 0.0.17'
 
+gem 'pg', '~> 1.1', '>= 1.1.4'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
