@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @exhibitor = @item.exhibitor
   end
 
   def edit
