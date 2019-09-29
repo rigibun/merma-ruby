@@ -1,1 +1,7 @@
 <h1><%= @user.name %></h1>
+<h2>このユーザが出品している商品</h2>
+<ul>
+<% @exhibits.each do |item| %>
+    <li><%= link_to item.name, item %></li>
+<% end %>
+</ul>
