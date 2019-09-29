@@ -28,6 +28,14 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item = Item.find(params[:id])
+    correct_exhibitor(@item)
+
+    if @item.update(item_params)
+      redirect_to @item
+    else
+      render 'edit'
+    end
   end
 
   def delete
@@ -37,5 +45,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :description, :condition)
+  end
+
+  def correct_exhibitor(item)
+    redirect_to(root) unless item.exhibitor == current_user
   end
 end
