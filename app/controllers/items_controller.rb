@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :condition)
+    params.require(:item).permit(:name, :description, :condition, :price)
   end
 
   def correct_exhibitor(item)

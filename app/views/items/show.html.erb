@@ -3,4 +3,5 @@
 <p>出品者：<%= link_to @exhibitor.name, @exhibitor %></p>
 <p><%= simple_format(h(@item.description)) %></p>
 <p>状態 : <%= @item.condition_i18n %></p>
+<p>価格 : <%= @item.price %>円</p>
 <%= link_to 'edit', edit_item_path(@item) %>

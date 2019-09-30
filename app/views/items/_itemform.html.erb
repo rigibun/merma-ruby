@@ -12,5 +12,7 @@
     <%= f.text_area :description %> <br>
     <%= f.label :condition %> <br>
     <%= f.select :condition, [["", ""]] + Item.conditions_i18n.invert.to_a %> <br>
+    <%= f.label :price %> <br>
+    <%= f.number_field :price, max: 9999999 %>円 <br>
     <%= f.submit %>
 <% end %>
